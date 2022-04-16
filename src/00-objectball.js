@@ -114,3 +114,19 @@ function gameObject() {
     },
   };
 }
+
+function numPointsScored(playerName) {
+  const game = gameObject();
+  for (const team in game) {
+    const players = game[team].players;
+    for (const player in players) {
+      if (player === playerName) return players[player].points;
+    }
+  }
+}
+
+console.log("Points for player Jeff Adrien : ", numPointsScored("Jeff Adrien"));
+console.log(
+  "Points for player Mason Plumlee : ",
+  numPointsScored("Mason Plumlee")
+);
