@@ -207,3 +207,20 @@ function mostPointsScored() {
 }
 
 console.log(mostPointsScored());
+
+function winningTeam() {
+  const game = gameObject();
+  let homeTeamPoints = 0;
+  let awayTeamPoints = 0;
+  for (const player in game.home.players) {
+    homeTeamPoints += game.home.players[player].points;
+  }
+  for (const player in game.away.players) {
+    awayTeamPoints += game.away.players[player].points;
+  }
+  return homeTeamPoints > awayTeamPoints
+    ? `Home Team (${game.home.teamName}) is the winning team with total points of : ${homeTeamPoints}`
+    : `Away Team (${game.away.teamName}) is the winning team with total points of : ${awayTeamPoints}`;
+}
+
+console.log(winningTeam());
