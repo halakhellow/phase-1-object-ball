@@ -115,14 +115,13 @@ function gameObject() {
   };
 }
 
-function numPointsScored(playerName) {
+function players() {
   const game = gameObject();
-  for (const team in game) {
-    const players = game[team].players;
-    for (const player in players) {
-      if (player === playerName) return players[player].points;
-    }
-  }
+  return { ...game.home.players, ...game.away.players };
+}
+
+function numPointsScored(playerName) {
+  return players()[playerName].points;
 }
 
 console.log("Points for player Jeff Adrien : ", numPointsScored("Jeff Adrien"));
@@ -132,13 +131,7 @@ console.log(
 );
 
 function shoeSize(playerName) {
-  const game = gameObject();
-  for (let team in game) {
-    let players = game[team].players;
-    for (let player in players) {
-      if (player === playerName) return players[player].shoe;
-    }
-  }
+  return players()[playerName].shoe;
 }
 
 console.log("Player Brendan Haywood shoe size : ", shoeSize("Brendan Haywood"));
