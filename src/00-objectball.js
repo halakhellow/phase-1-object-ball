@@ -233,7 +233,20 @@ function playerWithLongestName() {
   const namesLength = playersNames.map((name) => name.length);
   const maxLength = Math.max(...namesLength);
   const maxLengthIndex = namesLength.indexOf(maxLength);
-  return `The player with the longest name is : ${playersNames[maxLengthIndex]}`;
+  return playersNames[maxLengthIndex];
 }
 
-console.log(playerWithLongestName());
+console.log("The player with the longest name is : ", playerWithLongestName());
+
+function doesLongNameStealATon() {
+  const playerWithLongestNameSteals = players()[playerWithLongestName()].steals;
+  for (const player in players()) {
+    if (players()[player].steals > playerWithLongestNameSteals) return false;
+  }
+  return true;
+}
+
+console.log(
+  "Does the player with the longest name has the most steals? ",
+  doesLongNameStealATon()
+);
