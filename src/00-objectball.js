@@ -154,3 +154,18 @@ function teamNames(game) {
 }
 
 console.log(teamNames(gameObject()));
+
+function playersNumbers(teamName) {
+  const game = gameObject();
+  const homePlayers = game.home.players;
+  const awayPlayers = game.away.players;
+  const jerseys = [];
+  if (game.home.teamName === teamName) {
+    for (const player in homePlayers) jerseys.push(homePlayers[player].number);
+  } else {
+    for (const player in awayPlayers) jerseys.push(awayPlayers[player].number);
+  }
+  return jerseys;
+}
+
+console.log("Brooklyn Nets Team Jerseys", playersNumbers("Brooklyn Nets"));
