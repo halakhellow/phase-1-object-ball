@@ -191,3 +191,19 @@ function bigShoeRebounds() {
 }
 
 console.log(bigShoeRebounds());
+
+function mostPointsScored() {
+  let maxPoints = 0;
+  let playerWithMaxPoints;
+  for (const player in players()) {
+    if (maxPoints < players()[player].points) {
+      maxPoints = players()[player].points;
+      playerWithMaxPoints = player;
+    }
+  }
+  return `${playerWithMaxPoints} has scored the most points :  ${
+    players()[playerWithMaxPoints].points
+  }`;
+}
+
+console.log(mostPointsScored());
