@@ -136,3 +136,15 @@ function shoeSize(playerName) {
 
 console.log("Player Brendan Haywood shoe size : ", shoeSize("Brendan Haywood"));
 console.log("Player Brook Lopez shoe size : ", shoeSize("Brook Lopez"));
+
+function teamColors(teamName) {
+  const game = gameObject();
+  for (let team in game) {
+    if (game[team].teamName === teamName) return game[team].colors;
+  }
+}
+
+console.log(
+  "Team Charlotte Hornets colors are : ",
+  teamColors("Charlotte Hornets")
+);
