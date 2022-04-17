@@ -130,3 +130,16 @@ console.log(
   "Points for player Mason Plumlee : ",
   numPointsScored("Mason Plumlee")
 );
+
+function shoeSize(playerName) {
+  const game = gameObject();
+  for (let team in game) {
+    let players = game[team].players;
+    for (let player in players) {
+      if (player === playerName) return players[player].shoe;
+    }
+  }
+}
+
+console.log("Player Brendan Haywood shoe size : ", shoeSize("Brendan Haywood"));
+console.log("Player Brook Lopez shoe size : ", shoeSize("Brook Lopez"));
