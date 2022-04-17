@@ -148,3 +148,9 @@ console.log(
   "Team Charlotte Hornets colors are : ",
   teamColors("Charlotte Hornets")
 );
+
+function teamNames(game) {
+  return `Home team is : ${game.home.teamName} & Away team is : ${game.away.teamName}`;
+}
+
+console.log(teamNames(gameObject()));
