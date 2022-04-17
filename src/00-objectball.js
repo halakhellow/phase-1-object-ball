@@ -175,3 +175,19 @@ function playerStats(playerName) {
 }
 
 console.log("Alan Anderson stats : ", playerStats("Alan Anderson"));
+
+function bigShoeRebounds() {
+  let largestShoeSize = 0;
+  let playerWithLargestShoe;
+  for (const player in players()) {
+    if (largestShoeSize < players()[player].shoe) {
+      largestShoeSize = players()[player].shoe;
+      playerWithLargestShoe = player;
+    }
+  }
+  return `Rebounds for player ${playerWithLargestShoe} who has big shoe number are ${
+    players()[playerWithLargestShoe].rebounds
+  }`;
+}
+
+console.log(bigShoeRebounds());
