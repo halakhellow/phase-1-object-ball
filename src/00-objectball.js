@@ -169,3 +169,9 @@ function playersNumbers(teamName) {
 }
 
 console.log("Brooklyn Nets Team Jerseys", playersNumbers("Brooklyn Nets"));
+
+function playerStats(playerName) {
+  return players()[playerName];
+}
+
+console.log("Alan Anderson stats : ", playerStats("Alan Anderson"));
