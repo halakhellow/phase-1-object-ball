@@ -224,3 +224,16 @@ function winningTeam() {
 }
 
 console.log(winningTeam());
+
+function playerWithLongestName() {
+  const playersNames = [];
+  for (const player in players()) {
+    playersNames.push(player);
+  }
+  const namesLength = playersNames.map((name) => name.length);
+  const maxLength = Math.max(...namesLength);
+  const maxLengthIndex = namesLength.indexOf(maxLength);
+  return `The player with the longest name is : ${playersNames[maxLengthIndex]}`;
+}
+
+console.log(playerWithLongestName());
